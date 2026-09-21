@@ -1,8 +1,8 @@
 :root {
-  color-scheme: dark;
+  color-scheme: light;
   font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Noto Sans TC", "Segoe UI", sans-serif;
-  background: #0b0b0d;
-  color: #ffffff;
+  background: #f3efe7;
+  color: #1c1915;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -14,7 +14,7 @@
 html {
   min-width: 320px;
   min-height: 100%;
-  background: #0b0b0d;
+  background: #f3efe7;
 }
 
 body {
@@ -23,8 +23,8 @@ body {
   min-height: 100dvh;
   margin: 0;
   background:
-    radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.06), transparent 35%),
-    #0b0b0d;
+    radial-gradient(circle at 50% -10%, #fffaf2, transparent 42%),
+    #f3efe7;
 }
 
 .social-links {
