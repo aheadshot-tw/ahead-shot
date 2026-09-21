@@ -1,0 +1,163 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Noto Sans TC", "Segoe UI", sans-serif;
+  background: #0b0b0d;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: #0b0b0d;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.06), transparent 35%),
+    #0b0b0d;
+}
+
+.social-links {
+  width: min(100%, 480px);
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin-inline: auto;
+  padding:
+    max(14px, env(safe-area-inset-top))
+    max(14px, env(safe-area-inset-right))
+    max(14px, env(safe-area-inset-bottom))
+    max(14px, env(safe-area-inset-left));
+  display: grid;
+  grid-template-rows: repeat(3, minmax(154px, 194px));
+  align-content: center;
+  gap: 12px;
+}
+
+.social-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-width: 0;
+  align-items: flex-end;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: clamp(22px, 6.5vw, 30px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 26px;
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.social-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    radial-gradient(circle at 83% 8%, rgba(255, 255, 255, 0.24), transparent 30%),
+    linear-gradient(130deg, transparent 40%, rgba(255, 255, 255, 0.09));
+  pointer-events: none;
+}
+
+.social-card--line {
+  background: linear-gradient(145deg, #00c744 0%, #06a63d 100%);
+}
+
+.social-card--facebook {
+  background: linear-gradient(145deg, #2374e1 0%, #1254b5 100%);
+}
+
+.social-card--instagram {
+  background: linear-gradient(140deg, #f7a52e 0%, #e33f6e 48%, #7b38bd 100%);
+}
+
+.social-card__copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.social-card__title {
+  font-size: clamp(2rem, 9.5vw, 2.9rem);
+  font-weight: 760;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.social-card__subtitle {
+  font-size: 0.94rem;
+  font-weight: 550;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  opacity: 0.88;
+}
+
+.social-card__icon {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  align-self: flex-start;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.social-card__icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.social-card:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.social-card:active {
+  transform: scale(0.982);
+  opacity: 0.92;
+  box-shadow:
+    0 7px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .social-card:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 18px 36px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+}
+
+@media (max-height: 560px) {
+  .social-links {
+    grid-template-rows: repeat(3, 148px);
+    align-content: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-card {
+    transition: none;
+  }
+}
